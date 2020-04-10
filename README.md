@@ -29,8 +29,8 @@ The following steps show how to setup an PHP development environment for Windows
 127.0.0.1	webserver
 ```
 
- 2. Stop Firefox from searching the WWW when entering `webserver` or `testserver` in URL bar
-    - Open Firefox and ener `about:config` into URL bar
+ 2. Stop Firefox searching the WWW when entering `webserver` or `testserver` into URL bar
+    - Open Firefox and enter `about:config` into URL bar
     - Add `browser.fixup.domainwhitelist.webserver, true`
     - Add `browser.fixup.domainwhitelist.testserver, true` 
 
