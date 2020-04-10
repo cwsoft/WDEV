@@ -1,0 +1,87 @@
+# 👀 PyPhp - Windows Development Environment
+This repo contains Howtos and config files for setting up a Windows development environment for Python and PHP. The package is provided as is and may or may not be updated and extended in the future depending on available resources and needs.
+
+## Basic Setup
+ 1. Install [Git](https://git-scm.com/download/win) for Windows
+ 2. Install Windows console [Cmder](https://cmder.net/) replacement
+ 3. Install your preferred code editor e.g. [Visual Studio Code](https://code.visualstudio.com/)
+
+## Python Development Environment
+ 1. Install latest [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
+ 2. Open Cmder console and type the following commands
+
+´´´bash
+conda install python=3.8
+conda update --all
+conda install pylint
+conda install black
+´´´ 
+ 
+ 3. Copy user [settings.json](vscode/settings.json) file to your VS Code config folder.
+
+## PHP Development Environment
+The following steps show how to setup an PHP development environment for Windows.
+
+### Basic Setup
+ 1. Add virtual hosts to `C:\Windows\System32\drivers\etc\hosts`
+```bash
+127.0.0.1	localhost
+127.0.0.1	webserver
+```
+
+ 2. Stop Firefox from searching for webserver and testserver in the WWW
+    - Open Firefox and ener `about:config` into URL bar
+    - Add `browser.fixup.domainwhitelist.webserver, true`
+    - Add `browser.fixup.domainwhitelist.testserver, true`` 
+
+### Install XAMPP Packages
+ 1. Download [Portable XAMPP](https://sourceforge.net/projects/xampp/files/) *.7z packages and extract it to C:\Dev\01_XAMPP\php7.x.y folders
+ 2. Run **setup_xampp.bat** for each XAMPP package (e.g. PHP5/PHP7) you want to use
+
+#### Apache httpd-vhosts.conf file
+Add virtual servers to `C:\Dev\01_XAMPP\phpX\apache\conf\extra\httpd-vhosts.conf`.
+
+```
+<VirtualHost webserver:80>
+	ServerAdmin admin@webserver
+	DocumentRoot "C:/Dev/02_htdocs/"
+	ErrorLog "logs/webserver-error.log"
+	CustomLog "logs/webserver-error.log" common
+	ServerName webserver
+	ServerAlias webserver
+	DirectoryIndex index.html index.php
+	<Directory "C:/Dev/02_htdocs">
+		Options Indexes FollowSymLinks Includes ExecCGI
+		Require all granted
+		AllowOverride All
+	</Directory>
+</VirtualHost>
+
+<VirtualHost testserver:80>
+	ServerAdmin admin@testserver
+	DocumentRoot "C:/Dev/02_htdocs/.testserver"
+	ErrorLog "logs/testserver-error.log"
+	CustomLog "logs/testserver-error.log" common
+	ServerName testserver
+	ServerAlias testserver
+	DirectoryIndex index.html index.php
+	<Directory "C:/Dev/02_htdocs/.testserver">
+		Options Indexes FollowSymLinks Includes ExecCGI
+		Require all granted
+		AllowOverride All
+	</Directory>
+</VirtualHost>
+```
+
+#### MySQL my.ini file
+Adapt `C:\01_XAMPP\phpX\mysql\bin\my.ini` to use a shared DB for all installed PHP versions.
+
+```
+[mysqld]
+datadir = "/Dev/01_XAMPP/mysql-db"
+innodb_data_home_dir = "/Dev/01_XAMPP/mysql-db"
+innodb_log_group_home_dir = "/Dev/01_XAMPP/mysql-db"
+```
+ 
+Have fun 
+cwsoft

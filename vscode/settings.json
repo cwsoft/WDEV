@@ -1,0 +1,64 @@
+{
+  // Telemetry settings
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+
+  // Workbench settings
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.settings.editor": "json",
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#333"
+  },
+  
+  // Editor settings
+  "editor.rulers": [110],
+  "editor.tokenColorCustomizations": {
+    "[Visual Studio Dark]": {
+      "textMateRules": [
+        {
+          "scope": "string.quoted.docstring.multi.python",
+          "settings": {
+            "foreground": "#6a9955",
+          }
+        }
+      ]
+    }
+  },
+  
+  // Integrated Terminal
+  "terminal.external.windowsExec": "C:\\WINDOWS\\System32\\cmd.exe",
+  
+  // PHP settings
+  "php.suggest.basic": false,
+  "php.validate.executablePath": "C:\\Dev\\01_XAMPP\\php7.4.2\\php\\.php.exe",
+
+  // Python settings
+  "python.pythonPath": "python",
+  "python.globalModuleInstallation": false,
+  "python.jediEnabled": false,
+  
+  // Pyhton Linting
+  "python.linting.pylintPath": "pylint",
+  "python.linting.pylintArgs": [
+    "--max-line-length=110",
+    "--disable=C0103"
+  ],
+  
+  // Python Formatters
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "110"
+  ],
+  
+  // Code Runners for Python and PHP
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.showExecutionMessage": false,
+  "code-runner.executorMap": {
+    "python": "$pythonPath -u $fullFileName",
+    "php": "$phpPath $fullFileName"
+  },
+  "git.autofetch": true
+}
