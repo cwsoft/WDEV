@@ -5,7 +5,7 @@ This repo contains Howtos and config files for setting up a Windows development 
  1. Install [Git](https://git-scm.com/download/win) for Windows
  2. Install Windows console [Cmder](https://cmder.net/) replacement
  3. Install your preferred code editor e.g. [Visual Studio Code](https://code.visualstudio.com/)
- 4. Install the following VSCode extensions:
+ 4. Install the following VSCode [extensions for Python](https://code.visualstudio.com/docs/python/python-tutorial):
 	- German Language Pack
 	- Python
 	- Code Runner
