@@ -7,10 +7,12 @@ This repo contains Howtos and config files for setting up a Windows development 
  3. Install your preferred code editor e.g. [Visual Studio Code](https://code.visualstudio.com/)
  4. Install the following VSCode extensions:
 	- German Language Pack
-	- [Python](https://code.visualstudio.com/docs/python/python-tutorial)
-	- Code Runner
 	- vscode-icons
- 5. Copy user [settings.json](vscode/settings.json) file to your VS Code config folder.
+	- [MS Python Extension](https://github.com/Microsoft/vscode-python)
+	- [PHP Intelephense](https://github.com/bmewburn/vscode-intelephense)
+	- [Code Runner](https://github.com/formulahendry/vscode-code-runner)
+	
+ 5. Copy [settings.json](vscode/settings.json) to your VS Code config folder `%appdata%/Code/User/settings.json`
 
 ## Python Development Environment
  1. Install latest [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
@@ -26,7 +28,7 @@ conda install black
 3. Open VSCode and check if [Python](https://code.visualstudio.com/docs/python/python-tutorial) environments, linters and formatters work
 
 ## PHP Development Environment
-The following steps show how to setup an PHP development environment for Windows.
+As I don´t use PHP for any larger or serious programing tasks, the following instructions will only a very basic PHP development environment only. If you are in charge of a full stack PHP development environment for VS Code, you may want to check out this [blog](https://blog.theodo.com/2019/07/vscode-php-development/) for advice 😩.
 
 ### Basic Setup (Virtual Hosts / Firefox)
  1. Add virtual hosts to `C:\Windows\System32\drivers\etc\hosts`
