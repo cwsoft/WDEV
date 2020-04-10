@@ -10,12 +10,12 @@ This repo contains Howtos and config files for setting up a Windows development 
  1. Install latest [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
  2. Open Cmder console and type the following commands
 
-´´´bash
+```bash
 conda install python=3.8
 conda update --all
 conda install pylint
 conda install black
-´´´ 
+```
  
  3. Copy user [settings.json](vscode/settings.json) file to your VS Code config folder.
 
@@ -76,7 +76,7 @@ Add virtual servers to `C:\Dev\01_XAMPP\phpX\apache\conf\extra\httpd-vhosts.conf
 #### MySQL my.ini file
 Adapt `C:\01_XAMPP\phpX\mysql\bin\my.ini` to use a shared DB for all installed PHP versions.
 
-```
+```bash
 [mysqld]
 datadir = "/Dev/01_XAMPP/mysql-db"
 innodb_data_home_dir = "/Dev/01_XAMPP/mysql-db"
