@@ -10,7 +10,7 @@ This repo contains Howtos and config files for setting up a Windows development 
  1. Install latest [Miniconda3](https://docs.conda.io/en/latest/miniconda.html)
  2. Open Cmder console and type the following commands
 
-```bash
+```
 conda install python=3.8
 conda update --all
 conda install pylint
@@ -22,9 +22,13 @@ conda install black
 ## PHP Development Environment
 The following steps show how to setup an PHP development environment for Windows.
 
-### Basic Setup
+### Install XAMPP Packages
+ 1. Download [Portable XAMPP](https://sourceforge.net/projects/xampp/files/) *.7z packages and extract it to `C:\Dev\01_XAMPP\php7.x.y folders`
+ 2. Run `setup_xampp.bat` for each XAMPP package (e.g. PHP5/PHP7) you want to use
+
+### Add virtual hosts
  1. Add virtual hosts to `C:\Windows\System32\drivers\etc\hosts`
-```bash
+```
 127.0.0.1	localhost
 127.0.0.1	webserver
 ```
@@ -32,13 +36,9 @@ The following steps show how to setup an PHP development environment for Windows
  2. Stop Firefox from searching for webserver and testserver in the WWW
     - Open Firefox and ener `about:config` into URL bar
     - Add `browser.fixup.domainwhitelist.webserver, true`
-    - Add `browser.fixup.domainwhitelist.testserver, true`` 
+    - Add `browser.fixup.domainwhitelist.testserver, true` 
 
-### Install XAMPP Packages
- 1. Download [Portable XAMPP](https://sourceforge.net/projects/xampp/files/) *.7z packages and extract it to C:\Dev\01_XAMPP\php7.x.y folders
- 2. Run **setup_xampp.bat** for each XAMPP package (e.g. PHP5/PHP7) you want to use
-
-#### Apache httpd-vhosts.conf file
+### Adapt Apache httpd-vhosts.conf
 Add virtual servers to `C:\Dev\01_XAMPP\phpX\apache\conf\extra\httpd-vhosts.conf`.
 
 ```
@@ -73,8 +73,9 @@ Add virtual servers to `C:\Dev\01_XAMPP\phpX\apache\conf\extra\httpd-vhosts.conf
 </VirtualHost>
 ```
 
-#### MySQL my.ini file
-Adapt `C:\01_XAMPP\phpX\mysql\bin\my.ini` to use a shared DB for all installed PHP versions.
+#### Adapt MySQL my.ini
+1. Create a shared MySQL/Maria DB folder for all PHP versions `/Dev/01_XAMPP/mysql-db`
+2. Adapt all `C:\01_XAMPP\phpX\mysql\bin\my.ini` files to use the shared DB folder:
 
 ```bash
 [mysqld]
