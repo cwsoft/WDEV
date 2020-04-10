@@ -5,9 +5,9 @@ This repo contains Howtos and config files for setting up a Windows development 
  1. Install [Git](https://git-scm.com/download/win) for Windows
  2. Install Windows console [Cmder](https://cmder.net/) replacement
  3. Install your preferred code editor e.g. [Visual Studio Code](https://code.visualstudio.com/)
- 4. Install the following VSCode [extensions for Python](https://code.visualstudio.com/docs/python/python-tutorial):
+ 4. Install the following VSCode extensions:
 	- German Language Pack
-	- Python
+	- [Python](https://code.visualstudio.com/docs/python/python-tutorial)
 	- Code Runner
 	- vscode-icons
  5. Copy user [settings.json](vscode/settings.json) file to your VS Code config folder.
@@ -23,7 +23,7 @@ conda install pylint
 conda install black
 ```
 
-3. Open VSCode editor and check if environments, linters and formatters work as expected.
+3. Open VSCode and check if [Python](https://code.visualstudio.com/docs/python/python-tutorial) environments, linters and formatters work
 
 ## PHP Development Environment
 The following steps show how to setup an PHP development environment for Windows.
