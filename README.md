@@ -22,21 +22,21 @@ conda install black
 ## PHP Development Environment
 The following steps show how to setup an PHP development environment for Windows.
 
-### Install XAMPP Packages
- 1. Download [Portable XAMPP](https://sourceforge.net/projects/xampp/files/) *.7z packages and extract it to `C:\Dev\01_XAMPP\php7.x.y folders`
- 2. Run `setup_xampp.bat` for each XAMPP package (e.g. PHP5/PHP7) you want to use
-
-### Add virtual hosts
+### Basic Setup (Virtual Hosts / Firefox)
  1. Add virtual hosts to `C:\Windows\System32\drivers\etc\hosts`
 ```
 127.0.0.1	localhost
 127.0.0.1	webserver
 ```
 
- 2. Stop Firefox from searching for webserver and testserver in the WWW
+ 2. Stop Firefox from searching the WWW when entering `webserver` or `testserver` in URL bar
     - Open Firefox and ener `about:config` into URL bar
     - Add `browser.fixup.domainwhitelist.webserver, true`
     - Add `browser.fixup.domainwhitelist.testserver, true` 
+
+### Install XAMPP Packages
+ 1. Download [Portable XAMPP](https://sourceforge.net/projects/xampp/files/) *.7z packages and extract it to `C:\Dev\01_XAMPP\php7.x.y folders`
+ 2. Run `setup_xampp.bat` for each XAMPP package (e.g. PHP5/PHP7) you want to use
 
 ### Adapt Apache httpd-vhosts.conf
 Add virtual servers to `C:\Dev\01_XAMPP\phpX\apache\conf\extra\httpd-vhosts.conf`.
