@@ -28,7 +28,7 @@ conda install black
 3. Open VSCode and check if [Python](https://code.visualstudio.com/docs/python/python-tutorial) environments, linters and formatters work
 
 ## PHP Development Environment
-As I don´t use PHP for any larger or serious programing tasks, the following instructions will only a very basic PHP development environment only. If you are in charge of a full stack PHP development environment for VS Code, you may want to check out this [blog](https://blog.theodo.com/2019/07/vscode-php-development/) for advice 😩.
+As I don´t use PHP for any larger or serious programing tasks, the following instructions will only cover a very basic PHP development environment. If you need a full stack PHP development environment for VS Code, you may want to check out this [blog](https://blog.theodo.com/2019/07/vscode-php-development/) for advice 😩.
 
 ### Basic Setup (Virtual Hosts / Firefox)
  1. Add virtual hosts to `C:\Windows\System32\drivers\etc\hosts`
