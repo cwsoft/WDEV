@@ -1,72 +1,93 @@
 {
-  // Telemetry settings
+  // Telemetry settings.
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
 
-  // Windows settings
-  "window.zoomLevel": 0,
+  // Windows settings.
+  "window.zoomLevel": 1,
 
-  // Workbench settings
+  // Workbench settings.
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.colorTheme": "Default Dark+",
   "workbench.iconTheme": "vscode-icons",
   "workbench.settings.editor": "json",
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#333"
   },
-  
-  // Editor settings
-  "editor.rulers": [110],
+
+  // Editor settings.
+  "editor.rulers": [125],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.renderWhitespace": "trailing",
+  "editor.formatOnSave": true,
   "editor.tokenColorCustomizations": {
     "[Visual Studio Dark]": {
       "textMateRules": [
         {
           "scope": "string.quoted.docstring.multi.python",
           "settings": {
-            "foreground": "#6a9955",
+            "foreground": "#6a9955"
           }
         }
       ]
     }
   },
-  
-  // Integrated Terminal (Cmder support)
+
+  // Integrated Terminal (Cmder support).
   "terminal.external.windowsExec": "C:\\Dev\\05_Tools\\cmder\\cmder.exe",
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
-  // "terminal.integrated.shellArgs.windows": [
-  //   "/k",
-  //   "C:\\Dev\\05_Tools\\cmder\\vendor\\init.bat"
-  // ],
 
-  // PHP settings
+  // PHP settings.
   "php.validate.executablePath": "C:\\Dev\\01_XAMPP\\php7.4.2\\php\\php.exe",
   "php.validate.enable": false,
   "php.suggest.basic": false,
 
-  // Python settings
-  "python.pythonPath": "C:\\Dev\\05_Tools\\Miniconda3\\python.exe",
+  // Python settings.
+  "python.pythonPath": "C:\\Dev\\98_Tools\\Miniconda3\\envs\\jupyter\\python.exe",
   "python.globalModuleInstallation": false,
   "python.jediEnabled": false,
-  
-  // Pyhton Linting
+  "python.languageServer": "Pylance",
+
+  // Pyhton Linting.
   "python.linting.pylintPath": "pylint",
-  "python.linting.pylintArgs": [
-    "--max-line-length=110",
-    "--disable=C0103"
-  ],
-  
-  // Python Formatters
+  "python.linting.pylintArgs": ["--max-line-length=125", "--disable=C0103"],
+
+  // Python Formatters.
   "python.formatting.provider": "black",
-  "python.formatting.blackArgs": [
-    "--line-length",
-    "110"
-  ],
-  
-  // Code Runners for Python and PHP
+  "python.formatting.blackArgs": ["--line-length", "125"],
+
+  // Code Runners for Python, PHP, JS and HTML.
   "code-runner.clearPreviousOutput": true,
   "code-runner.showExecutionMessage": false,
   "code-runner.executorMap": {
     "python": "$pythonPath -u $fullFileName",
-    "php": "C:\\Dev\\01_XAMPP\\php7.4.2\\php\\php.exe -f $fullFileName"
+    "php": "C:\\Dev\\01_XAMPP\\php7.4.2\\php\\php.exe -f $fullFileName",
+    "javascript": "node",
+    "html": "\"C:\\Program Files\\Mozilla Firefox\\firefox.exe\""
   },
+
+  // HTML, CSS and JS settings.
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  // Configure Prettier formatter
+  "prettier.printWidth": 125,
+  "prettier.singleQuote": false,
+  "prettier.tabWidth": 2,
+
+  // Configure Dart Sass plugin
+  "dartsass.debug": true,
+  "dartsass.sassBinPath": "C:\\Users\\csommer\\AppData\\Roaming\\npm\\node_modules\\sass\\sass.js",
+  "dartsass.targetDirectory": "css",
+  "dartsass.disableMinifiedFileGeneration": true,
+  "dartsass.disableSourceMap": true,
+  "dartsass.disableAutoPrefixer": false,
+  "dartsass.autoPrefixBrowsersList": ["> 1%", "last 2 versions"],
+
+  // Re-create existing minified files (*.min.css|js) when saving main *.css|js files.
+  "minify.minifyExistingOnSave": true,
+
+  // Configure Bracket Pair Colorizer
+  "bracket-pair-colorizer-2.showBracketsInRuler": true,
+  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+  "bracket-pair-colorizer-2.showVerticalScopeLine": false
 }
