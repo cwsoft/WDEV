@@ -1,4 +1,4 @@
-# 👀 WDE - Windows Development Environment
+# 👀 WDE - Windows Development Env
 
 This repo contains Howtos and config files for setting up a Windows development environment for Python, PHP, Javascript, HTML and CSS. The package is provided as is and may or may not be updated and extended in the future depending on available resources and needs.
 
