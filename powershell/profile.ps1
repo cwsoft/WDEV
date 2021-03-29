@@ -8,20 +8,18 @@ if ($host.UI.RawUI.WindowTitle -match "Administrator") {$fgColor = "DarkRed"}
 function prompt {
     # Write Prompt with Path and optional Git branch and command prompt in new line.
     Write-Host "$(Get-Location) " -ForegroundColor $fgColor -NoNewline
-    Get-GitBranchName
+    (GetGitBranchName)
     Write-Host "`n$([char]0x03BB)" -ForegroundColor White -NoNewline
     return " "
 }
 
-function Get-GitBranchName {
+function GetGitBranchName {
     # Work out branch name and status if current folder is a valid git repo.
     $currentBranch = (git branch --show-current *2 $null)
     if ([string]::IsNullOrEmpty($currentBranch)) {return " "}
 
-    # Check if git branch index and working tree are clean.
-    if (-not (git status --porcelain)) {
-        Write-Host "($currentBranch)" -ForegroundColor White -NoNewline
-    } else {
-        Write-Host "($currentBranch)" -ForegroundColor Red -NoNewline
-    }
+    # Check if git index of actual branch and working tree are clean.
+    $fgColor = "White"
+    if ((git status --porcelain)) { $fgColor = "DarkRed"}
+    Write-Host "($currentBranch)" -ForegroundColor $fgColor -NoNewline
 }
