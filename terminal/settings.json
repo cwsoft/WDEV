@@ -26,7 +26,7 @@
   "profiles": {
     "defaults": {
       // Put settings here that you want to apply to all profiles.
-      "fontFace": "Cascadia Code",
+      "fontFace": "Consolas",
       "fontSize": 12,
       "fontWeight": "normal",
       "closeOnExit": "graceful",
