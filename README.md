@@ -5,7 +5,7 @@ This repo contains Howtos and config files for setting up a Windows development 
 ## Basic Setup
 
 1.  Install [Git](https://git-scm.com/download/win) for Windows
-2.  Install Windows console [Cmder](https://cmder.net/) replacement
+2.  Install the new [Windows Terminal](https://github.com/microsoft/terminal) from the Microsoft Store
 3.  Install your preferred code editor e.g. [Visual Studio Code](https://code.visualstudio.com/)
 4.  Install the following VSCode extensions:
 
@@ -32,7 +32,7 @@ This repo contains Howtos and config files for setting up a Windows development 
 2.  Open Cmder console and type the following commands
 
 ```
-conda install python=3.8
+conda install python=3.9
 conda update --all
 conda install pylint
 conda install black

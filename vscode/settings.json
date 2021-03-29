@@ -3,9 +3,6 @@
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
 
-  // Windows settings.
-  "window.zoomLevel": 1,
-
   // Workbench settings.
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Default Dark+",
@@ -16,10 +13,14 @@
   },
 
   // Editor settings.
-  "editor.rulers": [125],
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.renderWhitespace": "trailing",
+  // Format on save using Prettier by default (Python: black).
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "editor.rulers": [125],
+  "editor.renderWhitespace": "trailing",
   "editor.tokenColorCustomizations": {
     "[Visual Studio Dark]": {
       "textMateRules": [
@@ -33,6 +34,9 @@
     }
   },
 
+  // Git support.
+  "git.confirmSync": false,
+
   // Integrated Terminal (Cmder support).
   "terminal.external.windowsExec": "C:\\Dev\\05_Tools\\cmder\\cmder.exe",
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
@@ -42,11 +46,11 @@
   "php.validate.enable": false,
   "php.suggest.basic": false,
 
-  // Python settings.
+  // Python and Jupyter settings.
   "python.pythonPath": "C:\\Dev\\98_Tools\\Miniconda3\\envs\\jupyter\\python.exe",
   "python.globalModuleInstallation": false,
-  "python.jediEnabled": false,
   "python.languageServer": "Pylance",
+  "jupyter.askForKernelRestart": false,
 
   // Pyhton Linting.
   "python.linting.pylintPath": "pylint",
@@ -66,19 +70,16 @@
     "html": "\"C:\\Program Files\\Mozilla Firefox\\firefox.exe\""
   },
 
-  // HTML, CSS and JS settings.
-  "liveServer.settings.donotShowInfoMsg": true,
-
-  // Configure Prettier formatter
+  // Configure Prettier formatter (HTML, CSS, JS).
   "prettier.printWidth": 125,
   "prettier.singleQuote": false,
   "prettier.tabWidth": 2,
 
-  // Configure Dart Sass plugin
-  "dartsass.debug": true,
+  // Configure Dart Sass plugin.
+  "dartsass.debug": false,
   "dartsass.sassBinPath": "C:\\Users\\csommer\\AppData\\Roaming\\npm\\node_modules\\sass\\sass.js",
   "dartsass.targetDirectory": "css",
-  "dartsass.disableMinifiedFileGeneration": true,
+  "dartsass.outputFormat": "cssonly",
   "dartsass.disableSourceMap": true,
   "dartsass.disableAutoPrefixer": false,
   "dartsass.autoPrefixBrowsersList": ["> 1%", "last 2 versions"],
@@ -86,8 +87,14 @@
   // Re-create existing minified files (*.min.css|js) when saving main *.css|js files.
   "minify.minifyExistingOnSave": true,
 
-  // Configure Bracket Pair Colorizer
+  // Configure Bracket Pair Colorizer.
   "bracket-pair-colorizer-2.showBracketsInRuler": true,
   "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
-  "bracket-pair-colorizer-2.showVerticalScopeLine": false
+  "bracket-pair-colorizer-2.showVerticalScopeLine": false,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ]
 }
